@@ -1,0 +1,11 @@
+// BEGIN_INTERNALS
+/*
+MAP_ICON_TYPE: 0
+LAST_COMPILE_VERSION: 501.1217
+WINDOW: code\game\dna\dna2_domutcheck.dm;maps\exodus-1.dmm
+DIR: code code\game code\game\dna code\game\dna\genes code\game\objects code\game\objects\structures interface lib maps 
+FILE: code\game\dna\dna2_domutcheck.dm
+LAST_COMPILE_TIME: 1430099301
+AUTO_FILE_DIR: ON
+*/
+// END_INTERNALS
