@@ -103,7 +103,7 @@
 	magazine_type = /obj/item/ammo_magazine/a556
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	
+
 	var/use_launcher = 0
 	var/obj/item/weapon/gun/launcher/grenade/underslung/launcher
 
@@ -192,3 +192,59 @@
 	if(!cover_open)
 		return
 	..()
+
+/obj/item/weapon/gun/projectile/automatic/bullpup
+	name = "\improper NTSI-30 Bullpup"
+	desc = "A compact, bullpup design gun, standard issue in NT military ranks. Uses 5.56 rounds. Has a 'NanoTrasen Industries' buttstamp and the NT Arms logo"
+	icon_state = "bullpup"
+	item_state = "c20r"
+	w_class = 3.0
+	caliber = "a556"
+	origin_tech = "combat=5;materials=2"
+	ammo_type = "/obj/item/ammo_casing/a556"
+	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/a556
+	auto_eject = 1
+	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+
+
+	New()
+		..()
+		empty_mag = new /obj/item/ammo_magazine/a556/empty(src)
+		update_icon()
+		return
+
+
+	afterattack(atom/target as mob|obj|turf|area, mob/living/user as mob|obj, flag)
+		..()
+		if(!loaded.len && empty_mag)
+			empty_mag.loc = get_turf(src.loc)
+			empty_mag = null
+			playsound(user, 'sound/weapons/smg_empty_alarm.ogg', 40, 1)
+			update_icon()
+		return
+
+
+	update_icon()
+		..()
+		if(empty_mag)
+			icon_state = "bullpup-[round(loaded.len,6)]"
+		else
+			icon_state = "bullpup"
+		return
+
+/*
+/obj/item/weapon/gun/projectile/automatic/scorpion
+	name = "Scorpion"
+	desc = "An obsolete, fully automatic 9mm PDW. This one has been updated with smart LED's, informing the user when they are out of ammo."
+	icon_state = "c05r"
+	w_class = 3.0
+	max_shells = 15
+	caliber = "9mm"
+	origin_tech = "combat=5;materials=2;syndicate=8"
+	ammo_type = "/obj/item/ammo_casing/c45"
+
+	isHandgun()
+		return 1
+*/
