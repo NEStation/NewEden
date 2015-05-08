@@ -208,28 +208,10 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
-
-	New()
-		..()
-		empty_mag = new /obj/item/ammo_magazine/a556/empty(src)
-		update_icon()
-		return
-
-
-	afterattack(atom/target as mob|obj|turf|area, mob/living/user as mob|obj, flag)
-		..()
-		if(!loaded.len && empty_mag)
-			empty_mag.loc = get_turf(src.loc)
-			empty_mag = null
-			playsound(user, 'sound/weapons/smg_empty_alarm.ogg', 40, 1)
-			update_icon()
-		return
-
-
 	update_icon()
 		..()
-		if(empty_mag)
-			icon_state = "bullpup-[round(loaded.len,6)]"
+		if(ammo_magazine)
+			icon_state = "bullpup-[round(ammo_magazine.stored_ammo.len,6)]"
 		else
 			icon_state = "bullpup"
 		return

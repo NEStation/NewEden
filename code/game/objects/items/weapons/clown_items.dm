@@ -6,7 +6,7 @@
  */
 
 /*
- * Banana Peals
+ * Banana Peels
  */
 /obj/item/weapon/bananapeel/Crossed(AM as mob|obj)
 	if (istype(AM, /mob/living))
