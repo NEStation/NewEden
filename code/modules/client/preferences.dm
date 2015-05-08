@@ -93,13 +93,25 @@ datum/preferences
 	var/job_civilian_med = 0
 	var/job_civilian_low = 0
 
-	var/job_medsci_high = 0
-	var/job_medsci_med = 0
-	var/job_medsci_low = 0
+	var/job_med_high = 0
+	var/job_med_med = 0
+	var/job_med_low = 0
 
-	var/job_engsec_high = 0
-	var/job_engsec_med = 0
-	var/job_engsec_low = 0
+	var/job_sci_high = 0
+	var/job_sci_med = 0
+	var/job_sci_low = 0
+
+	var/job_eng_high = 0
+	var/job_eng_med = 0
+	var/job_eng_low = 0
+
+	var/job_sec_high = 0
+	var/job_sec_med = 0
+	var/job_sec_low = 0
+
+	var/job_cargo_high = 0
+	var/job_cargo_med = 0
+	var/job_cargo_low = 0
 
 	//Keeps track of preferrence for not getting any wanted jobs
 	var/alternate_option = 0
@@ -780,14 +792,25 @@ datum/preferences
 	job_civilian_med = 0
 	job_civilian_low = 0
 
-	job_medsci_high = 0
-	job_medsci_med = 0
-	job_medsci_low = 0
+	job_med_high = 0
+	job_med_med = 0
+	job_med_low = 0
 
-	job_engsec_high = 0
-	job_engsec_med = 0
-	job_engsec_low = 0
+	job_eng_high = 0
+	job_eng_med = 0
+	job_eng_low = 0
 
+	job_sci_high = 0
+	job_sci_med = 0
+	job_sci_low = 0
+
+	job_sec_high = 0
+	job_sec_med = 0
+	job_sec_low = 0
+
+	job_cargo_high = 0
+	job_cargo_med = 0
+	job_cargo_low = 0
 
 /datum/preferences/proc/GetJobDepartment(var/datum/job/job, var/level)
 	if(!job || !level)	return 0
@@ -800,22 +823,46 @@ datum/preferences
 					return job_civilian_med
 				if(3)
 					return job_civilian_low
-		if(MEDSCI)
+		if(MEDICAL)
 			switch(level)
 				if(1)
-					return job_medsci_high
+					return job_med_high
 				if(2)
-					return job_medsci_med
+					return job_med_med
 				if(3)
-					return job_medsci_low
-		if(ENGSEC)
+					return job_med_low
+		if(ENGINEERING)
 			switch(level)
 				if(1)
-					return job_engsec_high
+					return job_eng_high
 				if(2)
-					return job_engsec_med
+					return job_eng_med
 				if(3)
-					return job_engsec_low
+					return job_eng_low
+		if(SCIENCE)
+			switch(level)
+				if(1)
+					return job_sci_high
+				if(2)
+					return job_sci_med
+				if(3)
+					return job_sci_low
+		if(SECURITY)
+			switch(level)
+				if(1)
+					return job_sec_high
+				if(2)
+					return job_sec_med
+				if(3)
+					return job_sec_low
+		if(CARGO)
+			switch(level)
+				if(1)
+					return job_cargo_high
+				if(2)
+					return job_cargo_med
+				if(3)
+					return job_cargo_low
 	return 0
 
 /datum/preferences/proc/SetJobDepartment(var/datum/job/job, var/level)
@@ -823,16 +870,26 @@ datum/preferences
 	switch(level)
 		if(1)//Only one of these should ever be active at once so clear them all here
 			job_civilian_high = 0
-			job_medsci_high = 0
-			job_engsec_high = 0
+			job_med_high = 0
+			job_eng_high = 0
+			job_sci_high = 0
+			job_sec_high = 0
+			job_cargo_high = 0
 			return 1
 		if(2)//Set current highs to med, then reset them
 			job_civilian_med |= job_civilian_high
-			job_medsci_med |= job_medsci_high
-			job_engsec_med |= job_engsec_high
+			job_med_med |= job_med_high
+			job_eng_med |= job_eng_high
+			job_sci_med |= job_sci_high
+			job_sec_med |= job_sec_high
+			job_cargo_med |= job_cargo_high
+
 			job_civilian_high = 0
-			job_medsci_high = 0
-			job_engsec_high = 0
+			job_med_high = 0
+			job_eng_high = 0
+			job_sci_high = 0
+			job_sec_high = 0
+			job_cargo_high = 0
 
 	switch(job.department_flag)
 		if(CIVILIAN)
@@ -845,26 +902,56 @@ datum/preferences
 					job_civilian_low &= ~job.flag
 				else
 					job_civilian_low |= job.flag
-		if(MEDSCI)
+		if(MEDICAL)
 			switch(level)
 				if(2)
-					job_medsci_high = job.flag
-					job_medsci_med &= ~job.flag
+					job_med_high = job.flag
+					job_med_med &= ~job.flag
 				if(3)
-					job_medsci_med |= job.flag
-					job_medsci_low &= ~job.flag
+					job_med_med |= job.flag
+					job_med_low &= ~job.flag
 				else
-					job_medsci_low |= job.flag
-		if(ENGSEC)
+					job_med_low |= job.flag
+		if(ENGINEERING)
 			switch(level)
 				if(2)
-					job_engsec_high = job.flag
-					job_engsec_med &= ~job.flag
+					job_eng_high = job.flag
+					job_eng_med &= ~job.flag
 				if(3)
-					job_engsec_med |= job.flag
-					job_engsec_low &= ~job.flag
+					job_eng_med |= job.flag
+					job_eng_low &= ~job.flag
 				else
-					job_engsec_low |= job.flag
+					job_eng_low |= job.flag
+		if(SCIENCE)
+			switch(level)
+				if(2)
+					job_sci_high = job.flag
+					job_sci_med &= ~job.flag
+				if(3)
+					job_sci_med |= job.flag
+					job_sci_low &= ~job.flag
+				else
+					job_sci_low |= job.flag
+		if(SECURITY)
+			switch(level)
+				if(2)
+					job_sec_high = job.flag
+					job_sec_med &= ~job.flag
+				if(3)
+					job_sec_med |= job.flag
+					job_sec_low &= ~job.flag
+				else
+					job_sec_low |= job.flag
+		if(CARGO)
+			switch(level)
+				if(2)
+					job_cargo_high = job.flag
+					job_cargo_med &= ~job.flag
+				if(3)
+					job_cargo_med |= job.flag
+					job_cargo_low &= ~job.flag
+				else
+					job_cargo_low |= job.flag
 	return 1
 
 /datum/preferences/proc/process_link(mob/user, list/href_list)

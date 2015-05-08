@@ -984,6 +984,14 @@ area/space/atmosalert()
 	name = "\improper Bar"
 	icon_state = "bar"
 
+/area/crew_quarters/clown
+	name = "\improper Clown Office"
+	icon_state = "Clown"
+
+/area/crew_quarters/mime
+	name = "\improper Mime Office"
+	icon_state = "Mime"
+
 /area/crew_quarters/theatre
 	name = "\improper Theatre"
 	icon_state = "Theatre"

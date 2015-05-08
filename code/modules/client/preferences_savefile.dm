@@ -136,12 +136,21 @@
 	S["job_civilian_high"]	>> job_civilian_high
 	S["job_civilian_med"]	>> job_civilian_med
 	S["job_civilian_low"]	>> job_civilian_low
-	S["job_medsci_high"]	>> job_medsci_high
-	S["job_medsci_med"]		>> job_medsci_med
-	S["job_medsci_low"]		>> job_medsci_low
-	S["job_engsec_high"]	>> job_engsec_high
-	S["job_engsec_med"]		>> job_engsec_med
-	S["job_engsec_low"]		>> job_engsec_low
+	S["job_med_high"]		>> job_med_high
+	S["job_med_med"]		>> job_med_med
+	S["job_med_low"]		>> job_med_low
+	S["job_eng_high"]		>> job_eng_high
+	S["job_eng_med"]		>> job_eng_med
+	S["job_eng_low"]		>> job_eng_low
+	S["job_sci_high"]		>> job_sci_high
+	S["job_sci_med"]		>> job_sci_med
+	S["job_sci_low"]		>> job_sci_low
+	S["job_sec_high"]		>> job_sec_high
+	S["job_sec_med"]		>> job_sec_med
+	S["job_sec_low"]		>> job_sec_low
+	S["job_cargo_high"]		>> job_cargo_high
+	S["job_cargo_med"]		>> job_cargo_med
+	S["job_cargo_low"]		>> job_cargo_low
 
 	//Flavour Text
 	S["flavor_texts_general"]	>> flavor_texts["general"]
@@ -228,12 +237,21 @@
 	job_civilian_high = sanitize_integer(job_civilian_high, 0, 65535, initial(job_civilian_high))
 	job_civilian_med = sanitize_integer(job_civilian_med, 0, 65535, initial(job_civilian_med))
 	job_civilian_low = sanitize_integer(job_civilian_low, 0, 65535, initial(job_civilian_low))
-	job_medsci_high = sanitize_integer(job_medsci_high, 0, 65535, initial(job_medsci_high))
-	job_medsci_med = sanitize_integer(job_medsci_med, 0, 65535, initial(job_medsci_med))
-	job_medsci_low = sanitize_integer(job_medsci_low, 0, 65535, initial(job_medsci_low))
-	job_engsec_high = sanitize_integer(job_engsec_high, 0, 65535, initial(job_engsec_high))
-	job_engsec_med = sanitize_integer(job_engsec_med, 0, 65535, initial(job_engsec_med))
-	job_engsec_low = sanitize_integer(job_engsec_low, 0, 65535, initial(job_engsec_low))
+	job_med_high = sanitize_integer(job_med_high, 0, 65535, initial(job_med_high))
+	job_med_med = sanitize_integer(job_med_med, 0, 65535, initial(job_med_med))
+	job_med_low = sanitize_integer(job_med_low, 0, 65535, initial(job_med_low))
+	job_eng_high = sanitize_integer(job_eng_high, 0, 65535, initial(job_eng_high))
+	job_eng_med = sanitize_integer(job_eng_med, 0, 65535, initial(job_eng_med))
+	job_eng_low = sanitize_integer(job_eng_low, 0, 65535, initial(job_eng_low))
+	job_sci_high = sanitize_integer(job_sci_high, 0, 65535, initial(job_sci_high))
+	job_sci_med = sanitize_integer(job_sci_med, 0, 65535, initial(job_sci_med))
+	job_sci_low = sanitize_integer(job_sci_low, 0, 65535, initial(job_sci_low))
+	job_sec_high = sanitize_integer(job_sec_high, 0, 65535, initial(job_sec_high))
+	job_sec_med = sanitize_integer(job_sec_med, 0, 65535, initial(job_sec_med))
+	job_sec_low = sanitize_integer(job_sec_low, 0, 65535, initial(job_sec_low))
+	job_cargo_high = sanitize_integer(job_cargo_high, 0, 65535, initial(job_cargo_high))
+	job_cargo_med = sanitize_integer(job_cargo_med, 0, 65535, initial(job_cargo_med))
+	job_cargo_low = sanitize_integer(job_cargo_low, 0, 65535, initial(job_cargo_low))
 
 	if(!skills) skills = list()
 	if(!used_skillpoints) used_skillpoints= 0
@@ -290,12 +308,21 @@
 	S["job_civilian_high"]	<< job_civilian_high
 	S["job_civilian_med"]	<< job_civilian_med
 	S["job_civilian_low"]	<< job_civilian_low
-	S["job_medsci_high"]	<< job_medsci_high
-	S["job_medsci_med"]		<< job_medsci_med
-	S["job_medsci_low"]		<< job_medsci_low
-	S["job_engsec_high"]	<< job_engsec_high
-	S["job_engsec_med"]		<< job_engsec_med
-	S["job_engsec_low"]		<< job_engsec_low
+	S["job_med_high"]		<< job_med_high
+	S["job_med_med"]		<< job_med_med
+	S["job_med_low"]		<< job_med_low
+	S["job_eng_high"]		<< job_eng_high
+	S["job_eng_med"]		<< job_eng_med
+	S["job_eng_low"]		<< job_eng_low
+	S["job_sci_high"]		<< job_sci_high
+	S["job_sci_med"]		<< job_sci_med
+	S["job_sci_low"]		<< job_sci_low
+	S["job_sec_high"]		<< job_sec_high
+	S["job_sec_med"]		<< job_sec_med
+	S["job_sec_low"]		<< job_sec_low
+	S["job_cargo_high"]		<< job_cargo_high
+	S["job_cargo_med"]		<< job_cargo_med
+	S["job_cargo_low"]		<< job_cargo_low
 
 	//Flavour Text
 	S["flavor_texts_general"]	<< flavor_texts["general"]

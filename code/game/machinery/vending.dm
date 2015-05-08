@@ -991,7 +991,7 @@
 	req_access_txt = "1"
 	products = list(/obj/item/ammo_casing/shotgun/stunshell = 32, /obj/item/ammo_casing/shotgun = 32, /obj/item/ammo_magazine/mc9mm = 8,
 					/obj/item/ammo_magazine/c45m = 4, /obj/item/ammo_magazine/a556 = 4)
-	contraband = list(/obj/item/weapon/grenade/flashbang/clusterbang = 2, /obj/item/weapon/grenade/spawnergrenade/corgi = 1)
+	contraband = list(/obj/item/weapon/grenade/flashbang/clusterbang = 2) // /obj/item/weapon/grenade/spawnergrenade/corgi = 1)
 
 /obj/machinery/vending/shopping
 	name = "Fabi-Lust Dress Co."
