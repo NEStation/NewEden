@@ -32,9 +32,9 @@ var/const/CHAPLAIN			=(1<<7)
 var/const/CLOWN				=(1<<8)
 var/const/MIME				=(1<<9)
 var/const/ASSISTANT			=(1<<10)
-//var/const/ESCORT
-//var/const/JUDGE
-//var/const/BARBER
+var/const/ESCORT			=(1<<11)
+var/const/JUDGE				=(1<<12)
+var/const/BARBER			=(1<<13)
 
 var/const/SECURITY			=(1<<3)
 
@@ -43,11 +43,11 @@ var/const/HOS				=(1<<1)
 var/const/WARDEN			=(1<<2)
 var/const/DETECTIVE			=(1<<3)
 var/const/OFFICER			=(1<<4)
-//var/const/BLUESHIELD
-//var/const/PILOT
-//var/const/CUSTOMS
-//var/const/BRIGDOC
-//var/const/VETERAN
+var/const/BLUESHIELD		=(1<<5)
+var/const/PILOT				=(1<<6)
+var/const/CUSTOMS			=(1<<7)
+var/const/BRIGDOC			=(1<<8)
+var/const/VETERAN			=(1<<9)
 
 var/const/SCIENCE			=(1<<4)
 
@@ -110,12 +110,12 @@ var/list/civilian_positions = list(
 	"Chef",
 	"Janitor",
 	"Librarian",
-	"Quartermaster",
-	"Cargo Technician",
-	"Shaft Miner",
 	"Lawyer",
 	"Chaplain",
-	"Assistant"
+	"Assistant",
+	"Escort",
+	"Judge",
+	"Barber"
 )
 
 
@@ -123,7 +123,19 @@ var/list/security_positions = list(
 	"Head of Security",
 	"Warden",
 	"Detective",
-	"Security Officer"
+	"Security Officer",
+	"Blueshield Agent",
+	"Customs Officer",
+	"Pilot",
+	"Brig Doctor",
+	"Security Advisor"
+)
+
+
+var/list/cargo_positions = list(
+	"Quartermaster",
+	"Cargo Technician",
+	"Shaft Miner",
 )
 
 

@@ -1,7 +1,7 @@
 //wip wip wup
 /obj/structure/mirror
 	name = "mirror"
-	desc = "A SalonPro Nano-Mirror(TM) brand mirror! The leading technology in hair salon products, utilizing nano-machinery to style your hair just right."
+	desc = "It used to be able to style your hair for you. But we wouldn't want the barber to be out of business, would we?"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "mirror"
 	density = 0
