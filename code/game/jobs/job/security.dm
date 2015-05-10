@@ -12,11 +12,11 @@
 	access = list(access_security, access_sec_doors, access_brig, access_armory, access_court,
 			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 			            access_research, access_engine, access_mining, access_medical, access_construction, access_mailsorting,
-			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway)
+			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_podbay, access_blueshield)
 	minimal_access = list(access_security, access_sec_doors, access_brig, access_armory, access_court,
 			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 			            access_research, access_engine, access_mining, access_medical, access_construction, access_mailsorting,
-			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway)
+			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_podbay, access_blueshield)
 	minimal_player_age = 14
 
 	equip(var/mob/living/carbon/human/H)
@@ -53,8 +53,8 @@
 	spawn_positions = 1
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
-	access = list(access_security, access_sec_doors, access_brig, access_armory, access_court, access_maint_tunnels, access_morgue)
-	minimal_access = list(access_security, access_sec_doors, access_brig, access_armory, access_court, access_maint_tunnels)
+	access = list(access_security, access_sec_doors, access_brig, access_armory, access_court, access_maint_tunnels, access_morgue, access_podbay)
+	minimal_access = list(access_security, access_sec_doors, access_brig, access_armory, access_court, access_maint_tunnels, access_podbay)
 	minimal_player_age = 5
 
 	equip(var/mob/living/carbon/human/H)
@@ -156,3 +156,109 @@
 			H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
 			H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_in_backpack)
 		return 1
+
+/*
+
+/datum/job/blueshield
+	title = "Blueshield Agent"
+	flag = BLUESHIELD
+	department_flag = SECURITY
+	faction = "Station"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the captain"
+	selection_color = "#ffeeee"
+	access = list(access_security, access_sec_doors, access_brig, access_court, access_maint_tunnels, access_heads, access_morgue, access_blueshield)
+	minimal_access = list(access_security, access_sec_doors, access_brig, access_court, access_maint_tunnels, access_heads, access_blueshield)
+	minimal_player_age = 3
+	equip(var/mob/living/carbon/human/H) //Equip with blueshield stuffs
+		if(!H)	return 0
+		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/hos(H), slot_l_ear)
+		switch(H.backbag)
+			if(2) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/security(H), slot_back)
+			if(3) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel_sec(H), slot_back)
+			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/tactical(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(H), slot_shoes)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/security(H), slot_belt)
+		H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest/blueshield(H), slot_wear_suit)
+
+/datum/job/pilot
+	title = "Pilot"
+	flag = PILOT
+	department_flag = SECURITY
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the head of security"
+	selection_color = "#ffeeee"
+	access = list(access_security, access_sec_doors, access_podbay, access_maint_tunnels)
+	minimal_player_age = 3
+	equip(var/mob/living/carbon/human/H) //Equip with pilot stuffs
+		if(!H)	return 0
+		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/headset_sec(H), slot_l_ear)
+		switch(H.backbag)
+			if(2) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/security(H), slot_back)
+			if(3) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel_sec(H), slot_back)
+			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
+
+/datum/job/customs
+	title = "Customs Officer"
+	flag = CUSTOMS
+	department_flag = SECURITY
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the head of security"
+	selection_color = "#ffeeee"
+	access = list(access_security, access_sec_doors, access_brig, access_court, access_maint_tunnels, access_cargo, access_hydroponics)
+	minimal_access = list(access_security, access_sec_doors, access_brig, access_maint_tunnels, access_hydroponics)
+	minimal_player_age = 3
+	alt_titles = list("Vice Officer")
+	equip(var/mob/living/carbon/human/H) //Equip with customs stuffs
+		if(!H)	return 0
+		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/headset_sec(H), slot_l_ear)
+		switch(H.backbag)
+			if(2) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/security(H), slot_back)
+			if(3) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel_sec(H), slot_back)
+			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
+
+/datum/job/brigdoc
+	title = "Brig Doctor"
+	flag = BRIGDOC
+	department_flag = SECURITY
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the head of security"
+	selection_color = "#ffeeee"
+	access = list(access_security, access_sec_doors, access_brig, access_court, access_morgue, access_medical)
+	minimal_player_age = 3
+	equip(var/mob/living/carbon/human/H) //Equip with brigdoc stuffs
+		if(!H)	return 0
+		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/headset_sec(H), slot_l_ear) //Will change to med-sec later
+		switch(H.backbag)
+			if(2) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/security(H), slot_back)
+			if(3) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel_sec(H), slot_back)
+			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
+
+/datum/job/veteran
+	title = "Security Advisor"
+	flag = VETERAN
+	department_flag = SECURITY
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the local colonial marines detatchment commander"
+	selection_color = "#ffeeee"
+	access = list(access_sec_doors) //Add some office at some point.
+	minimal_player_age = 3
+	equip(var/mob/living/carbon/human/H) //Equip with veteran stuffs
+		if(!H)	return 0
+		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/headset_sec(H), slot_l_ear)
+		switch(H.backbag)
+			if(2) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/security(H), slot_back)
+			if(3) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel_sec(H), slot_back)
+			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
+
+*/

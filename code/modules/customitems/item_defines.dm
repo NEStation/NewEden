@@ -888,13 +888,6 @@
 	item_state = "leatherjack"
 	item_color = "leatherjack"
 
-/obj/item/clothing/suit/armor/vest/fluff/deus_blueshield //deusdactyl
-	name = "blue shield security armor"
-	desc = "An armored vest with the badge of a Blue Shield Security lieutenant."
-	icon = 'icons/obj/custom_items.dmi'
-	icon_state = "deus_blueshield"
-	item_state = "deus_blueshield"
-
 /obj/item/clothing/suit/fluff/oldscarf //Writerer2: Javaria Zara
 	name = "old scarf"
 	desc = "An old looking scarf, it seems to be fairly worn."

@@ -901,6 +901,10 @@ area/space/atmosalert()
 	name = "\improper Chief Medical Officer's Office"
 	icon_state = "head_quarters"
 
+/area/crew_quarters/blueshield
+	name = "\improper Blueshield Office"
+	icon_state = "blueshield"
+
 /area/crew_quarters/courtroom
 	name = "\improper Courtroom"
 	icon_state = "courtroom"

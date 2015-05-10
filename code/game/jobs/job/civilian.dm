@@ -186,6 +186,7 @@
 	selection_color = "#dddddd"
 	access = list(access_janitor, access_maint_tunnels)
 	minimal_access = list(access_janitor, access_maint_tunnels)
+	alt_titles = list("Custodian", "Groundskeeper")
 
 
 	equip(var/mob/living/carbon/human/H)
@@ -267,3 +268,68 @@
 
 
 		return 1
+
+/*
+/datum/job/judge
+	title = "Judge"
+	flag = JUDGE
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "central command"
+	selection_color = "#dddddd"
+	access = list(access_court, access_sec_doors, access_maint_tunnels)
+	minimal_access = list(access_court, access_sec_doors)
+	alt_titles = list("Magistrate", "Adjudicator", "Justice")
+	equip(var/mob/living/carbon/human/H)
+		if(!H) return 0
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/color/black(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(H), slot_shoes)
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/powdered_wig(H), slot_head)
+		H.equip_to_slot_or_del(new /obj/item/clothing/suit/judgerobe(H), slot_wear_suit)
+		if(H.backbag == 1)
+			H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)
+		else
+			H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
+		return 1
+
+
+/datum/job/barber
+	title = "Barber"
+	flag = BARBER
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the head of personnel"
+	selection_color = "#dddddd"
+	access = list(access_maint_tunnels)
+	minimal_access = list()
+	alt_titles = list("Hair Stylist", "Hairdresser")
+	equip(var/mob/living/carbon/human/H)
+		if(!H) return 0
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/gentlesuit(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(H), slot_shoes)
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/powdered_wig(H), slot_head)
+		if(H.backbag == 1)
+			H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)
+		else
+			H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
+		return 1
+
+/datum/job/escort
+	title = "Escort"
+	flag = ESCORT
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 3
+	spawn_positions = 3
+	supervisors = "the head of personnel and your clients"
+	selection_color = "#dddddd"
+	alt_titles = list("Prostitute", "Station Whore")
+	access = list(access_maint_tunnels)
+	minimal_access = list()
+	equip(var/mob/living/carbon/human/H) //Equip with whorish things
+
+*/

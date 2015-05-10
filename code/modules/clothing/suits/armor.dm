@@ -33,6 +33,12 @@
 	item_state = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
+/obj/item/clothing/suit/armor/vest/blueshield
+	name = "blue shield security armor"
+	desc = "An armored vest with the badge of a Blue Shield Security lieutenant."
+	icon_state = "blueshield"
+	item_state = "deus_blueshield" //Have to leave it like this until I find where the item_state sprite is!
+
 
 /obj/item/clothing/suit/armor/riot
 	name = "Riot Suit"
