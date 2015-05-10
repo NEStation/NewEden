@@ -1,0 +1,22 @@
+#ignore all those unnecessary files that seem to not do anything
+*.dyn
+*.rsc
+*.lk
+
+#ignore NewEden.int. People are supposed to untrack it, but this should take care of that.
+*.int
+
+#ignore all files in data. We don't need ban lists and player saves carrying over.
+data/**
+
+#ignore everything inside config, except example directories.
+config/**
+!config/names
+!config/example
+
+#ignore compiled environments.
+*.dmb
+
+#ignore logs and backups
+*.log
+*.backup
