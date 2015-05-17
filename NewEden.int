@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-LAST_COMPILE_VERSION: 501.1217
-WINDOW: code\game\dna\dna2_domutcheck.dm;maps\exodus-1.dmm
-DIR: code code\game code\game\dna code\game\dna\genes code\game\objects code\game\objects\structures interface lib maps 
-FILE: code\game\dna\dna2_domutcheck.dm
-LAST_COMPILE_TIME: 1430099301
+WINDOW: NewEden.dme;code\setup.dm;code\modules\projectiles\guns\projectile\cis_capgun.dm;icons\obj\gun.dmi;code\modules\admin\verbs\possess.dm
+LAST_COMPILE_VERSION: 506.1247
+DIR: code code\game\dna code\game\dna\genes code\game\objects code\game\objects\structures code\modules code\modules\admin code\modules\admin\verbs code\modules\projectiles code\modules\projectiles\guns code\modules\projectiles\guns\projectile icons icons\obj 
+FILE: code\modules\projectiles\guns\projectile\cis_capgun.dm
+LAST_COMPILE_TIME: 1431881156
 AUTO_FILE_DIR: ON
 */
 // END_INTERNALS
