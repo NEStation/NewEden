@@ -23,6 +23,54 @@
 		src << "\red The forum URL is not set in the server configuration."
 	return
 
+/client/verb/donate()
+	set name = "donate"
+	set desc = "Visit the donations page."
+	set hidden = 1
+	if( config.donateurl )
+		if(alert("This will open the donations page in your browser. Are you sure?",,"Yes","No")=="No")
+			return
+		src << link(config.donateurl)
+	else
+		src << "\red The donation URL is not set in the server configuration."
+	return
+
+/client/verb/git()
+	set name = "git"
+	set desc = "Visit the github repository."
+	set hidden = 1
+	if( config.giturl )
+		if(alert("This will open the github repository in your browser. Are you sure?",,"Yes","No")=="No")
+			return
+		src << link(config.giturl)
+	else
+		src << "\red The github URL is not set in the server configuration."
+	return
+
+/client/verb/youtube()
+	set name = "youtube"
+	set desc = "Visit the youtube channel."
+	set hidden = 1
+	if( config.youtubeurl )
+		if(alert("This will open the youtube channel in your browser. Are you sure?",,"Yes","No")=="No")
+			return
+		src << link(config.youtubeurl)
+	else
+		src << "\red The youtube URL is not set in the server configuration."
+	return
+
+/client/verb/twitch()
+	set name = "twitch"
+	set desc = "Visit the twitch stream."
+	set hidden = 1
+	if( config.twitchurl )
+		if(alert("This will open the twitch stream in your browser. Are you sure?",,"Yes","No")=="No")
+			return
+		src << link(config.twitchurl)
+	else
+		src << "\red The twitch URL is not set in the server configuration."
+	return
+
 #define RULES_FILE "config/rules.html"
 /client/verb/rules()
 	set name = "Rules"
